@@ -71,6 +71,18 @@ composer install
 Crie um arquivo `.env` na raiz do seu projeto e configure as variáveis de ambiente conforme necessário.
 Execute `php artisan config:cache` para aplicar as configurações do arquivo `.env`.
 
+Para gerar uma chave de aplicação do Laravel, execute:
+
+```php
+php artisan key:generate
+```
+
+Para gerar uma chave secreta para o JWT, execute:
+
+```php
+php artisan jwt:secret
+```
+
 Inicie o servidor da API:
 
 ```bash
@@ -81,6 +93,12 @@ Para desativar o servidor da API:
 
 ```bash
 ./vendor/bin/sail down
+```
+
+Após inicializar o servidor, realize a migração do banco de dados:
+
+```bash
+sudo ./vendor/bin/sail artisan migrate
 ```
 
 ### Passo 3: Configuração do Front-end
